@@ -70,7 +70,7 @@ Pod::Spec.new do |s|
   #  For header files it will include any header in the folder.
   #  Not including the public_header_files will make all headers public.
   #
-  s.source_files = "core/**/*"
+  s.source_files = "KGestureView/**/*"
   s.public_header_files = "KGestureView/KGestureView.h"
   s.pod_target_xcconfig = {
     'ENABLE_BITCODE' => "YES"
