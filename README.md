@@ -9,7 +9,13 @@
 
 ## 演示项目
 
-项目中，通过storyboard添加UIView，设置UIView类型为KGestureView使用
-KGestureView开放了xib属性设置，可以在xib上设置手势控件相关样式
+- 项目中，通过storyboard添加UIView，设置UIView类型为KGestureView使用
 
-下载项目后，进入项目目录，执行pod install安装KGestureView即可运行Demo
+- KGestureView开放了xib属性设置，可以在xib上设置手势控件相关样式
+
+- 下载项目后，进入项目目录，执行pod install安装KGestureView即可运行Demo
+
+- KGestureView也提供了Frame实例使用的方式
+    ```Objective-C
+    -(instancetype)initWithFrame:(CGRect)frame;
+    ```
