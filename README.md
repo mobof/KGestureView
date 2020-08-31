@@ -16,6 +16,6 @@
 - 下载项目后，进入项目目录，执行pod install安装KGestureView即可运行Demo
 
 - KGestureView也提供了Frame实例使用的方式
-    ```Objective-C
-    -(instancetype)initWithFrame:(CGRect)frame;
-    ```
+```Objective-C
+-(instancetype)initWithFrame:(CGRect)frame;
+```
