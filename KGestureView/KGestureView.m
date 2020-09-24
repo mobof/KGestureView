@@ -54,6 +54,11 @@
     [self initializeSubviews];
 }
 
+- (void)showTip:(NSString*)tip isError:(BOOL)error {
+    _descLabel.text = tip;
+    _descLabel.textColor = error ? (_errTipLabelColor ? _errTipLabelColor : LABELWRONGCOLOR) : (_tipLabelColor ? _tipLabelColor : LABELCOLOR);
+}
+
 #pragma mark - ^ Layout Subviews
 - (void)initializeSubviews{
     //1.设置背景色为superview背景色

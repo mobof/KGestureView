@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F9CDF6BFBB128461C38D69E /* Pods_KGestureViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30A2A34B5EAFFC60DAC94E21 /* Pods_KGestureViewDemo.framework */; };
 		31AA446124FC915F00A06126 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA446024FC915F00A06126 /* AppDelegate.m */; };
 		31AA446424FC915F00A06126 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA446324FC915F00A06126 /* SceneDelegate.m */; };
 		31AA446724FC915F00A06126 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31AA446624FC915F00A06126 /* ViewController.m */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		30A2A34B5EAFFC60DAC94E21 /* Pods_KGestureViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KGestureViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AA445C24FC915F00A06126 /* KGestureViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KGestureViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31AA445F24FC915F00A06126 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31AA446024FC915F00A06126 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -31,8 +29,6 @@
 		31AA446E24FC916400A06126 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31AA447024FC916400A06126 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		31AA447124FC916400A06126 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		901000EE58E82F92E8F49D0F /* Pods-KGestureViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGestureViewDemo.release.xcconfig"; path = "Target Support Files/Pods-KGestureViewDemo/Pods-KGestureViewDemo.release.xcconfig"; sourceTree = "<group>"; };
-		F098276CD09A9E0A4892FF95 /* Pods-KGestureViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGestureViewDemo.debug.xcconfig"; path = "Target Support Files/Pods-KGestureViewDemo/Pods-KGestureViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +36,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F9CDF6BFBB128461C38D69E /* Pods_KGestureViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +47,6 @@
 			children = (
 				31AA445E24FC915F00A06126 /* KGestureViewDemo */,
 				31AA445D24FC915F00A06126 /* Products */,
-				B78BBA4C56D88D08A2AD6585 /* Pods */,
 				59C1B1B7BCCE059F7DCF5D70 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -86,19 +80,8 @@
 		59C1B1B7BCCE059F7DCF5D70 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				30A2A34B5EAFFC60DAC94E21 /* Pods_KGestureViewDemo.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B78BBA4C56D88D08A2AD6585 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F098276CD09A9E0A4892FF95 /* Pods-KGestureViewDemo.debug.xcconfig */,
-				901000EE58E82F92E8F49D0F /* Pods-KGestureViewDemo.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,11 +91,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31AA447524FC916400A06126 /* Build configuration list for PBXNativeTarget "KGestureViewDemo" */;
 			buildPhases = (
-				099C53B2989E7504E29C2FB3 /* [CP] Check Pods Manifest.lock */,
 				31AA445824FC915F00A06126 /* Sources */,
 				31AA445924FC915F00A06126 /* Frameworks */,
 				31AA445A24FC915F00A06126 /* Resources */,
-				81A2E36318AC48AC63376B3D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -167,48 +148,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		099C53B2989E7504E29C2FB3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KGestureViewDemo-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		81A2E36318AC48AC63376B3D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KGestureViewDemo/Pods-KGestureViewDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KGestureViewDemo/Pods-KGestureViewDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KGestureViewDemo/Pods-KGestureViewDemo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		31AA445824FC915F00A06126 /* Sources */ = {
@@ -356,7 +295,6 @@
 		};
 		31AA447624FC916400A06126 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F098276CD09A9E0A4892FF95 /* Pods-KGestureViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -374,7 +312,6 @@
 		};
 		31AA447724FC916400A06126 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 901000EE58E82F92E8F49D0F /* Pods-KGestureViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

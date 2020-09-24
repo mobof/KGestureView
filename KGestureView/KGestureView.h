@@ -23,6 +23,11 @@ typedef enum {
 /// @param frame 布局范围
 - (instancetype)initWithFrame:(CGRect)frame;
 
+/// 显示提示信息
+/// @param tip 提示内容
+/// @param error 是否异常信息
+- (void)showTip:(NSString*)tip isError:(BOOL)error;
+
 /// 手势密码模型
 @property (assign,nonatomic) IBInspectable GESTURE_MODEL mode;
 
