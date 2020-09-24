@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKo-Uu-gRW" customClass="KGestureView">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showMini" value="YES"/>
@@ -40,8 +40,8 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="SKo-Uu-gRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7L1-Ts-qS6"/>
-                            <constraint firstItem="SKo-Uu-gRW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ybn-hI-NLD"/>
+                            <constraint firstItem="SKo-Uu-gRW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="7L1-Ts-qS6"/>
+                            <constraint firstItem="SKo-Uu-gRW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-20" id="Ybn-hI-NLD"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SKo-Uu-gRW" secondAttribute="bottom" id="kpl-8e-W5b"/>
                             <constraint firstItem="SKo-Uu-gRW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nR4-dz-2Mi"/>
                         </constraints>

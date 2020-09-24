@@ -188,14 +188,14 @@
 - (KGestureTrace *)traceView{
     if (!_traceView) {
         _traceView = [[KGestureTrace alloc] initWithPointColor:_unselectedColor ? _unselectedColor : ITEMCOLOR radialColor:_selectedColor ? _selectedColor : SELECTCOLOR];
-        [_traceView setFrame:CGRectMake((UIScreen.mainScreen.bounds.size.width-40)/2, 20, 40, 40)];
+        [_traceView setFrame:CGRectMake((UIScreen.mainScreen.bounds.size.width - 2 * self.frame.origin.x - 40)/2, 20, 40, 40)];
     }
     return _traceView;
 }
 
 - (UILabel *)descLabel {
     if (!_descLabel) {
-        _descLabel = [[UILabel alloc] initWithFrame:(CGRect){0,CGRectGetMaxY(_traceView.frame),UIScreen.mainScreen.bounds.size.width,40}];
+        _descLabel = [[UILabel alloc] initWithFrame:(CGRect){0,CGRectGetMaxY(_traceView.frame),UIScreen.mainScreen.bounds.size.width - 2 * self.frame.origin.x,40}];
         _descLabel.textAlignment = NSTextAlignmentCenter;
         _descLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightRegular];
         _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
@@ -204,7 +204,7 @@
 }
 
 - (void)layoutNinePoint {
-    CGFloat space = (UIScreen.mainScreen.bounds.size.width - 3 * ITEM_DIAM) / 4;
+    CGFloat space = (UIScreen.mainScreen.bounds.size.width - 2 * self.frame.origin.x - 3 * ITEM_DIAM) / 4;
     for (int i = 0; i < 9; i++){
         int row = i / 3;
         int col = i % 3;
