@@ -1,6 +1,6 @@
 # Uncomment the next line to define a global platform for your project
 # platform :ios, '9.0'
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://gitee.com/mirrors/CocoaPods-Specs.git'
 use_frameworks!
 
 target 'KGestureViewDemo' do
@@ -8,5 +8,6 @@ target 'KGestureViewDemo' do
   # use_frameworks!
 
   # Pods for KGestureViewDemo
-  pod 'KGestureView'
+  pod 'KGestureView', :path => '../'
+  # pod 'KGestureView'
 end

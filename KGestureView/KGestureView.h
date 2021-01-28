@@ -28,6 +28,9 @@ typedef enum {
 /// @param error 是否异常信息
 - (void)showTip:(NSString*)tip isError:(BOOL)error;
 
+/// 取消手势输入
+- (void)clearGestureInput;
+
 /// 手势密码模型
 @property (assign,nonatomic) IBInspectable GESTURE_MODEL mode;
 
@@ -48,6 +51,12 @@ typedef enum {
 
 /// 异常提示文字的颜色
 @property (strong,nonatomic) IBInspectable UIColor *errTipLabelColor;
+
+/// 手势输入提示内容
+@property (strong,nonatomic) IBInspectable NSString *firGestureInputTip;
+
+/// 第二次手势输入提示内容
+@property (strong,nonatomic) IBInspectable NSString *secGestureInputTip;
 
 /// 设置手势以及验证手势时的回调
 @property (strong,nonatomic) void (^pwdBlock)(NSString* pwd);

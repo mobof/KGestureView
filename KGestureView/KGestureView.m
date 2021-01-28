@@ -54,9 +54,24 @@
     [self initializeSubviews];
 }
 
+#pragma mark - ^ Public Interface
 - (void)showTip:(NSString*)tip isError:(BOOL)error {
     _descLabel.text = tip;
     _descLabel.textColor = error ? (_errTipLabelColor ? _errTipLabelColor : LABELWRONGCOLOR) : (_tipLabelColor ? _tipLabelColor : LABELCOLOR);
+}
+
+- (void)clearGestureInput {
+    if (_mode == GESTURE_MODEL_VERIFY) {
+        return;
+    }
+    if (_mode == GESTURE_MODEL_REGIST) {
+        _descLabel.text = _firGestureInputTip != nil && _firGestureInputTip.length > 0 ? _firGestureInputTip : PWD_SET_TIP;
+    }else{
+        _descLabel.text = _firGestureInputTip != nil && _firGestureInputTip.length > 0 ? _firGestureInputTip : PWD_OLD_TIP;;
+    }
+    _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
+    _firPwd = nil;
+    [_traceView reDrawWithColor:_unselectedColor ? _unselectedColor : ITEMCOLOR];
 }
 
 #pragma mark - ^ Layout Subviews
@@ -80,10 +95,10 @@
     _mode = mode;
     switch (mode) {
         case GESTURE_MODEL_REGIST:
-            _descLabel.text = PWD_SET_TIP;
+            _descLabel.text = _firGestureInputTip != nil && _firGestureInputTip.length > 0 ? _firGestureInputTip : PWD_SET_TIP;
             break;
         case GESTURE_MODEL_MODIFY:
-            _descLabel.text = PWD_OLD_TIP;
+            _descLabel.text = _firGestureInputTip != nil && _firGestureInputTip.length > 0 ? _firGestureInputTip : PWD_OLD_TIP;
             break;
         default:
             _descLabel.text = PWD_VERIFY_TIP;
@@ -91,7 +106,7 @@
     }
 }
 
-#pragma mark - | Touch Event
+#pragma mark - ^ Touch Event
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     [super touchesBegan:touches withEvent:event];
     
@@ -184,7 +199,7 @@
     [path stroke];
 }
 
-#pragma mark - | Subviews structure
+#pragma mark - ^ Subviews structure
 - (KGestureTrace *)traceView{
     if (!_traceView) {
         _traceView = [[KGestureTrace alloc] initWithPointColor:_unselectedColor ? _unselectedColor : ITEMCOLOR radialColor:_selectedColor ? _selectedColor : SELECTCOLOR];
@@ -195,9 +210,13 @@
 
 - (UILabel *)descLabel {
     if (!_descLabel) {
-        _descLabel = [[UILabel alloc] initWithFrame:(CGRect){0,CGRectGetMaxY(_traceView.frame),UIScreen.mainScreen.bounds.size.width - 2 * self.frame.origin.x,40}];
+        if (self.showMini) {
+            _descLabel = [[UILabel alloc] initWithFrame:(CGRect){0,CGRectGetMaxY(_traceView.frame) + 30,UIScreen.mainScreen.bounds.size.width - 2 * self.frame.origin.x,22}];
+        }else{
+            _descLabel = [[UILabel alloc] initWithFrame:(CGRect){0,CGRectGetMaxY(_traceView.frame),UIScreen.mainScreen.bounds.size.width - 2 * self.frame.origin.x,22}];
+        }
         _descLabel.textAlignment = NSTextAlignmentCenter;
-        _descLabel.font = [UIFont systemFontOfSize:14 weight:UIFontWeightRegular];
+        _descLabel.font = [UIFont systemFontOfSize:18 weight:UIFontWeightMedium];
         _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
     }
     return _descLabel;
@@ -208,9 +227,12 @@
     for (int i = 0; i < 9; i++){
         int row = i / 3;
         int col = i % 3;
-        
         KGestureItem *item = [[KGestureItem alloc] initWithPointColor:_unselectedColor ? _unselectedColor : ITEMCOLOR radialColor:_selectedColor ? _selectedColor : SELECTCOLOR];
-        [item setFrame:CGRectMake(space + col * (ITEM_DIAM + space) ,row * (ITEM_DIAM + space) + CGRectGetMaxY(_descLabel.frame) + 20 ,ITEM_DIAM ,ITEM_DIAM)];
+        if (self.showMini) {
+            [item setFrame:CGRectMake(space + col * (ITEM_DIAM + space) ,CGRectGetMaxY(self.descLabel.frame) + 30 + row * (ITEM_DIAM + space) ,ITEM_DIAM ,ITEM_DIAM)];
+        }else{
+            [item setFrame:CGRectMake(space + col * (ITEM_DIAM + space) ,95 + row * (ITEM_DIAM + space) ,ITEM_DIAM ,ITEM_DIAM)];
+        }
         item.userInteractionEnabled = YES;
         item.backgroundColor = [UIColor clearColor];
         item.isSelect = NO;
@@ -219,7 +241,7 @@
     }
 }
 
-#pragma mark - | Private method
+#pragma mark - ^ Private method
 - (void)isPointSelected:(CGPoint)point{
     for (KGestureItem *item in self.subviews){
         if (!CGRectContainsPoint(item.frame, point) || item.isSelect){
@@ -273,7 +295,7 @@
         case GESTURE_MODEL_MODIFY:
             if (!_firPwd) {//首次输入
                 _firPwd = pwd;
-                _descLabel.text = PWD_NEW_TIP;
+                _descLabel.text = _secGestureInputTip != nil && _secGestureInputTip.length > 0 ? _secGestureInputTip : PWD_NEW_TIP;
                 _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
                 return;
             }
@@ -284,7 +306,7 @@
                 [self shake:_descLabel];
                 return;
             }
-            _descLabel.text = PWD_INPUT_TIP;
+            _descLabel.text = _secGestureInputTip != nil && _secGestureInputTip.length > 0 ? _secGestureInputTip : PWD_INPUT_TIP;
             _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
             if (_pwdEditBlock) _pwdEditBlock([_firPwd stringByReplacingOccurrencesOfString:@"A" withString:@""],[pwd stringByReplacingOccurrencesOfString:@"A" withString:@""]);
             _firPwd = nil;
@@ -292,7 +314,7 @@
         case GESTURE_MODEL_REGIST:
             if (!_firPwd) {//首次输入
                 _firPwd = pwd;
-                _descLabel.text = PWD_RESET_TIP;
+                _descLabel.text = _secGestureInputTip != nil && _secGestureInputTip.length > 0 ? _secGestureInputTip :  PWD_RESET_TIP;
                 _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
                 return;
             }
@@ -303,7 +325,7 @@
                 [self shake:_descLabel];
                 return;
             }
-            _descLabel.text = PWD_MATCH_TIP;
+            _descLabel.text = _secGestureInputTip != nil && _secGestureInputTip.length > 0 ? _secGestureInputTip : PWD_MATCH_TIP;
             _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
             if (_pwdBlock) _pwdBlock([pwd stringByReplacingOccurrencesOfString:@"A" withString:@""]);
             _firPwd = nil;
