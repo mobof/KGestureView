@@ -7,15 +7,17 @@
 //
 
 #import "ViewController.h"
+#import <KGestureView/KGestureView.h>
 
 @interface ViewController ()
-
+@property (weak,nonatomic) IBOutlet KGestureView *gestureView;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _gestureView.mode = GESTURE_MODEL_REGIST;
     // Do any additional setup after loading the view.
 }
 

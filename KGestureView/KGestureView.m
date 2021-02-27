@@ -309,7 +309,6 @@
             _descLabel.text = _secGestureInputTip != nil && _secGestureInputTip.length > 0 ? _secGestureInputTip : PWD_INPUT_TIP;
             _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
             if (_pwdEditBlock) _pwdEditBlock([_firPwd stringByReplacingOccurrencesOfString:@"A" withString:@""],[pwd stringByReplacingOccurrencesOfString:@"A" withString:@""]);
-            _firPwd = nil;
             break;
         case GESTURE_MODEL_REGIST:
             if (!_firPwd) {//首次输入
@@ -328,7 +327,6 @@
             _descLabel.text = _secGestureInputTip != nil && _secGestureInputTip.length > 0 ? _secGestureInputTip : PWD_MATCH_TIP;
             _descLabel.textColor = _tipLabelColor ? _tipLabelColor : LABELCOLOR;
             if (_pwdBlock) _pwdBlock([pwd stringByReplacingOccurrencesOfString:@"A" withString:@""]);
-            _firPwd = nil;
             break;
         case GESTURE_MODEL_VERIFY:
             _descLabel.text = PWD_INPUT_TIP;
