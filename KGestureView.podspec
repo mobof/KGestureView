@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-  s.source = { :git => "https://github.com/spinery/KGestureView.git", :tag => "#{s.version}" }
+  s.source = { :git => "https://github.com/9lord/KGestureView", :tag => "#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
