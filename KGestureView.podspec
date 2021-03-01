@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
                     轻量优雅的九宫格密码OC实现，支持xib设置属性，推荐xib直接使用
                    DESC
 
-  s.homepage     = "https://github.com/9lord/KGestureView"
+  s.homepage     = "https://github.com/9lord/KGestureView.git"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -61,7 +61,7 @@ Pod::Spec.new do |s|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-  s.source = { :git => "https://github.com/9lord/KGestureView", :tag => "#{s.version}" }
+  s.source = { :git => "https://github.com/9lord/KGestureView.git", :tag => "#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
