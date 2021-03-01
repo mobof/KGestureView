@@ -26,7 +26,7 @@ Pod::Spec.new do |s|
                     轻量优雅的九宫格密码OC实现，支持xib设置属性，推荐xib直接使用
                    DESC
 
-  s.homepage     = "https://github.com/spinery/KGestureView"
+  s.homepage     = "https://github.com/9lord/KGestureView"
 
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
