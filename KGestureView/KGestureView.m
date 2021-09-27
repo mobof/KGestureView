@@ -77,7 +77,7 @@
 #pragma mark - ^ Layout Subviews
 - (void)initializeSubviews{
     //1.设置背景色为superview背景色
-    self.backgroundColor = self.superview.backgroundColor;
+    self.backgroundColor = UIColor.whiteColor;
     
     //2.动态显示选择的点
     if (_showMini) {
