@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   #  summary should be tweet-length, and the description more in depth.
   #
   s.name         = "KGestureView"
-  s.version      = "0.0.6"
+  s.version      = "0.0.8"
   s.summary      = "自定义九宫格密码组件"
 
   # This description is used to generate tags and improve search results.
